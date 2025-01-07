@@ -1,5 +1,7 @@
 import React from 'react'
 import "./slipUI.css"
+import { db } from './firbase'
+import { setDoc, doc } from 'firebase/firestore'
 
 function slipUI() {
   return (
