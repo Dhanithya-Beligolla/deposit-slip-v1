@@ -47,7 +47,7 @@ function slipUI() {
             {/* <!-- Date --> */}
             <div className="form-group">
                 <label for="date">Date <span className="multi-lang">(දිනය / தேதி)</span></label>
-                <input type="date" id="date" name="date" value={date} onChange={(e) => setDate(e.target.value)} />
+                <input type="date" id="date" name="date" value={date} onChange={(e) => setDate(e.target.value)} required/>
             </div>
 
             {/* <!-- Account Number --> */}
