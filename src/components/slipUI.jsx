@@ -8,7 +8,7 @@ function slipUI() {
     <div>
         <div className="form-container">
         <image src="dfcc-logo.png" alt="DFCC Bank Logo" className="logo" />
-        <h2>Bank Deposit Slip</h2>
+        <h2>Bank Deposit Slip Head Office</h2>
         <form>
             {/* <!-- Date --> */}
             <div className="form-group">
