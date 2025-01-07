@@ -4,6 +4,7 @@ import "./slipUI.css"
 import { db } from './firbase'
 import { setDoc, doc } from 'firebase/firestore'
 import { use } from "react"
+import logo from "../assets/dfcc-logo.png"
 
 function slipUI() {
     const navigate = useNavigate();
@@ -40,7 +41,7 @@ function slipUI() {
   return (
     <div>
         <div className="form-container">
-        <image src="dfcc-logo.png" alt="DFCC Bank Logo" className="logo" />
+        <image src={logo} alt="DFCC Bank Logo" className="logo" />
         <h2>Bank Deposit Slip Head Office</h2>
         <form onSubmit={handleSubmit}>
             {/* <!-- Date --> */}
