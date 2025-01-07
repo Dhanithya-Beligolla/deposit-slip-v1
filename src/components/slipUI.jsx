@@ -42,7 +42,7 @@ function slipUI() {
     <div>
         <div className="form-container">
         <image src={logo} alt="DFCC Bank Logo" className="logo" />
-        <h2>Bank Deposit Slip Head Office</h2>
+        <h2>Bank Deposit Slip</h2>
         <form onSubmit={handleSubmit}>
             {/* <!-- Date --> */}
             <div className="form-group">
