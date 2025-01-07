@@ -1,9 +1,42 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import "./slipUI.css"
 import { db } from './firbase'
 import { setDoc, doc } from 'firebase/firestore'
+import { use } from "react"
 
 function slipUI() {
+    const navigate = useNavigate();
+
+    const [date, setDate] = useState('');
+    const [accountNumber, setAccountNumber] = useState('');
+    const [accountHolder, setAccountHolder] = useState('');
+    const [currency, setCurrency] = useState('');
+    const [totalAmount, setTotalAmount] = useState('');
+    const [depositorName, setDepositorName] = useState('');
+    const [nicPassport, setNicPassport] = useState('');
+    const [addressTelephone, setAddressTelephone] = useState('');
+    const [purpose, setPurpose] = useState('');
+    const [signature, setSignature] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const docRef = doc(db, "deposit-slips", accountNumber);
+        await setDoc(docRef, {
+            date: date,
+            accountNumber: accountNumber,
+            accountHolder: accountHolder,
+            currency: currency,
+            totalAmount: totalAmount,
+            depositorName: depositorName,
+            nicPassport: nicPassport,
+            addressTelephone: addressTelephone,
+            purpose: purpose,
+            signature: signature
+        });
+        navigate('/');
+    }
+
   return (
     <div>
         <div className="form-container">
@@ -13,7 +46,7 @@ function slipUI() {
             {/* <!-- Date --> */}
             <div className="form-group">
                 <label for="date">Date <span className="multi-lang">(දිනය / தேதி)</span></label>
-                <input type="date" id="date" name="date" required />
+                <input type="date" id="date" name="date" value={date} onChange={(e) => setDate(e.target.value)} required />
             </div>
 
             {/* <!-- Account Number --> */}
